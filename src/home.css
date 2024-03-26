@@ -1,6 +1,6 @@
 .header {
   height: 80px;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   padding-left: 100px;
   padding-top: 6px;
@@ -11,7 +11,7 @@
 .main-top img {
   height: 960px;
   margin-top: -80px;
-  width: 100vw;
+  width: 100%;
   /* display: block; */
 }
 
@@ -24,7 +24,7 @@
 .main-top-over {
   position: absolute;
   top: 15%;
-  width: 100vw;
+  width: 100%;
 }
 
 .main-top-text {
@@ -188,12 +188,13 @@
 .footer > div {
   width: 75%;
   border: 3px solid #14abb2;
+  background-color: #dfecf2;
   height: 220px;
-  padding: 48px;
+  padding: 40px;
 }
 
 .footer > div > h3 {
   font-size: 1.8rem;
-  
+
   color: #14abb2;
 }

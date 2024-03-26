@@ -249,17 +249,17 @@ function Home() {
           <p>
             Get in touch to discuss enterprise use cases or provide feedback
           </p>
-          <FormControl size="small">
+          <FormControl size="small" sx={{paddingY:"15px"}}>
             <Button
               sx={{
                 borderRadius: "18px",
-                width: "120px",
+                width: "140px",
                 fontWeight: "unset",
                 color: "white",
                 backgroundImage: "linear-gradient(to right, #14ABB2, #2E598C)",
               }}
             >
-              Get in touch?
+              Get in touch
             </Button>
           </FormControl>
         </div>

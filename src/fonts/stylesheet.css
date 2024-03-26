@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-BoldItalic.eot');
+    src: local('Forza Bold Italic'), local('Forza-BoldItalic'),
+        url('Forza-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-BoldItalic.woff2') format('woff2'),
+        url('Forza-BoldItalic.woff') format('woff'),
+        url('Forza-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-Medium.eot');
+    src: local('Forza Medium'), local('Forza-Medium'),
+        url('Forza-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Medium.woff2') format('woff2'),
+        url('Forza-Medium.woff') format('woff'),
+        url('Forza-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-Thin.eot');
+    src: local('Forza Thin'), local('Forza-Thin'),
+        url('Forza-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Thin.woff2') format('woff2'),
+        url('Forza-Thin.woff') format('woff'),
+        url('Forza-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-Light.eot');
+    src: local('Forza Light'), local('Forza-Light'),
+        url('Forza-Light.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Light.woff2') format('woff2'),
+        url('Forza-Light.woff') format('woff'),
+        url('Forza-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-LightItalic.eot');
+    src: local('Forza Light Italic'), local('Forza-LightItalic'),
+        url('Forza-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-LightItalic.woff2') format('woff2'),
+        url('Forza-LightItalic.woff') format('woff'),
+        url('Forza-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Forza Book';
+    src: url('Forza-Book.eot');
+    src: local('Forza Book'), local('Forza-Book'),
+        url('Forza-Book.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Book.woff2') format('woff2'),
+        url('Forza-Book.woff') format('woff'),
+        url('Forza-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza Book';
+    src: url('Forza-BookItalic.eot');
+    src: local('Forza Book Italic'), local('Forza-BookItalic'),
+        url('Forza-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-BookItalic.woff2') format('woff2'),
+        url('Forza-BookItalic.woff') format('woff'),
+        url('Forza-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-Black.eot');
+    src: local('Forza Black'), local('Forza-Black'),
+        url('Forza-Black.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Black.woff2') format('woff2'),
+        url('Forza-Black.woff') format('woff'),
+        url('Forza-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-ThinItalic.eot');
+    src: local('Forza Thin Italic'), local('Forza-ThinItalic'),
+        url('Forza-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-ThinItalic.woff2') format('woff2'),
+        url('Forza-ThinItalic.woff') format('woff'),
+        url('Forza-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-BlackItalic.eot');
+    src: local('Forza Black Italic'), local('Forza-BlackItalic'),
+        url('Forza-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-BlackItalic.woff2') format('woff2'),
+        url('Forza-BlackItalic.woff') format('woff'),
+        url('Forza-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-Bold.eot');
+    src: local('Forza Bold'), local('Forza-Bold'),
+        url('Forza-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Forza-Bold.woff2') format('woff2'),
+        url('Forza-Bold.woff') format('woff'),
+        url('Forza-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forza';
+    src: url('Forza-MediumItalic.eot');
+    src: local('Forza Medium Italic'), local('Forza-MediumItalic'),
+        url('Forza-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Forza-MediumItalic.woff2') format('woff2'),
+        url('Forza-MediumItalic.woff') format('woff'),
+        url('Forza-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
