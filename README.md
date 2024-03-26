@@ -1,20 +1,30 @@
-# Build and Deploy a Fantastic 3D Portfolio Website with Three.js and React.js
-![3D Portfolio](https://i.ibb.co/9ykhLtM/Thumbnail.png)
+# React + TypeScript + Vite
 
-## Introduction
-The most impressive websites in the world use 3D graphics and animations to bring their content to life. Learn how to build your own ThreeJS 3D Developer Portfolio today! 
- 
-In this course, you'll learn the following:
-- ThreeJS - a powerful 3D graphics library for rendering and animating the 3D model
-- React Three Fiber - a popular library for creating 3D graphics with ThreeJS in React
-- TailwindCSS - a popular utility-first CSS styling framework
-- Framer Motion - the most popular library used to bring your React website to life with animations
-You'll also learn how to:
-- Load, create and customize stunning 3D models and geometries with various lights, as well as understand the 3D world with a camera and positioning of an object in space.
-- Make your code reusable and scalable using Higher Order Components (HOCs) and other industry-standard best practices
-- Implement sending emails through a form on the website
-- Ensure responsiveness across all devices and improve your site's performance using Suspense and Preload.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Want to land your dream programming job in 3 - 6 months?
-⭐ JSM Masterclass Experience - https://jsmastery.pro/masterclass
-Become a Software Engineer. Guaranteed.
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
