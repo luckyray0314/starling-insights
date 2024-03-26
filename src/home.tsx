@@ -59,7 +59,13 @@ function Home() {
               xs={4}
               sm={8}
               md={12}
-              sx={{ padding: 2, display: "flex", justifyContent: "center" }}
+              sx={{
+                padding: 2,
+                display: "flex",
+                justifyContent: "center",
+                width: "70%",
+                margin: "0px auto",
+              }}
             >
               <Grid item xs={2} sm={4} md={4}>
                 <FormControl fullWidth size="small">
@@ -73,12 +79,22 @@ function Home() {
                       marginX: "auto",
                       borderRadius: "18px",
                       width: "250px",
-                      border: "0px solid transparent",
+
                       borderImage:
                         "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "white",
-                      backgroundImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
+                      color: "black",
+                      "&:hover": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
+                      "&.Mui-focused": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
                     }}
                   >
                     <MenuItem value={""}>Search by topic</MenuItem>
@@ -100,15 +116,25 @@ function Home() {
                       marginX: "auto",
                       borderRadius: "18px",
                       width: "250px",
-                      border: "0px solid transparent",
+
                       borderImage:
                         "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "white",
-                      backgroundImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
+                      color: "black",
+                      "&:hover": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
+                      "&.Mui-focused": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
                     }}
                   >
-                    <MenuItem value={""}>Search by topic</MenuItem>
+                    <MenuItem value={""}>Search by expert</MenuItem>
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
@@ -127,15 +153,25 @@ function Home() {
                       marginX: "auto",
                       borderRadius: "18px",
                       width: "250px",
-                      border: "0px solid transparent",
+
                       borderImage:
                         "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "white",
-                      backgroundImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
+                      color: "black",
+                      "&:hover": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
+                      "&.Mui-focused": {
+                        backgroundImage:
+                          "linear-gradient(to right, #14ABB2, #2E598C)",
+
+                        color: "white",
+                      },
                     }}
                   >
-                    <MenuItem value={""}>Search by topic</MenuItem>
+                    <MenuItem value={""}>Search by date range</MenuItem>
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
@@ -174,13 +210,18 @@ function Home() {
                 color: "#14ABB2",
               }}
             >
-              <Typography variant="h3" sx={{ width: "70%" }}>
+              <Typography
+                variant="h3"
+                sx={{ width: "70%", fontFamily: "ForzaMedium" }}
+              >
                 Optionally use the document selector above to combine new data
                 with Starling AI for instant analysis
               </Typography>
             </Grid>
             <Grid>
-              <Typography>Add up to 10 docs</Typography>
+              <Typography sx={{ fontFamily: "ForzaMedium" }}>
+                Add up to 10 docs
+              </Typography>
               <FormControl size="small">
                 <Button
                   sx={{
@@ -249,7 +290,7 @@ function Home() {
           <p>
             Get in touch to discuss enterprise use cases or provide feedback
           </p>
-          <FormControl size="small" sx={{paddingY:"15px"}}>
+          <FormControl size="small" sx={{ paddingY: "15px" }}>
             <Button
               sx={{
                 borderRadius: "18px",

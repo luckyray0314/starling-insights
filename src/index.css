@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "ForzaThin";
+  font-family: "ForzaMedium";
   src: url("./fonts/Forza-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  font-family: "ForzaThin", Inter, system-ui, Avenir, Helvetica, Arial,
+  font-family: "ForzaMedium", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
