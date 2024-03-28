@@ -1,5 +1,7 @@
 // import { useState } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import {
@@ -223,18 +225,20 @@ function Home() {
                 Add up to 10 docs
               </Typography>
               <FormControl size="small">
-                <Button
-                  sx={{
-                    marginTop: "20px",
-                    borderRadius: "18px",
-                    width: "320px",
-                    color: "white",
-                    backgroundImage:
-                      "linear-gradient(to right, #14ABB2, #2E598C)",
-                  }}
-                >
-                  Start your conversation
-                </Button>
+                <Link to="/chat">
+                  <Button
+                    sx={{
+                      marginTop: "20px",
+                      borderRadius: "18px",
+                      width: "320px",
+                      color: "white",
+                      backgroundImage:
+                        "linear-gradient(to right, #14ABB2, #2E598C)",
+                    }}
+                  >
+                    Start your conversation
+                  </Button>
+                </Link>
               </FormControl>
             </Grid>
           </div>

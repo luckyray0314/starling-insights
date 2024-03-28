@@ -1,0 +1,154 @@
+.chat-header {
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  padding-left: 100px;
+  padding-top: 6px;
+
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, #14abb2, #2e598c);
+  border-image-slice: 1;
+  box-sizing: border-box;
+  border-width: 0px 0px 2px 0px;
+}
+
+.main-div {
+  height: calc(100vh - 80px);
+  width: 100%;
+  padding: 0px 70px 70px 70px;
+  /* background-color: #14abb2; */
+}
+
+.main-div-top {
+  height: 100px;
+  width: 100%;
+  padding: 32px 0px;
+  display: flex;
+  gap: 20px;
+}
+
+.main-div-top-left {
+  width: 50%;
+}
+
+.gradient-button {
+  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: black;
+  /* display: block; */
+  padding: 2px 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.gradient-button:hover {
+  color: #fff;
+}
+
+.gradient-button span {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.gradient-button:hover span {
+  background: transparent;
+}
+
+.button-active span {
+  background: transparent;
+  color: white;
+}
+
+.main-div-top-right {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
+.main-body {
+  height: calc(100% - 100px);
+  display: flex;
+  gap: 20px;
+}
+
+.main-body-left {
+  background-color: #dfecf2;
+  width: 50%;
+  height: 100%;
+}
+
+.main-body-left-chat {
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+
+.main-body-left-chat > p {
+  font-size: 21px;
+  width: 70%;
+  text-align: center;
+  color: #14abb2;
+  font-weight: bolder;
+}
+
+.main-body-left-chat > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fixed-width-gradient-button {
+  width: 380px;
+}
+
+.fixed-width-gradient-button span {
+  background-color: #dfecf2;
+}
+
+.main-body-left-bottom {
+  height: 60px;
+  width: 100%;
+  display: flex;
+
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(to right, #14abb2, #2e598c);
+  border-image-slice: 1;
+  box-sizing: border-box;
+  border-width: 2px 0px 0px 0px;
+}
+
+.main-body-left-bottom > div {
+  width: 100%;
+}
+
+.uparrow-button {
+  margin: auto 10px;
+}
+
+.main-body-right {
+  width: 50%;
+  height: 100%;
+
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #14abb2, #2e598c);
+  border-image-slice: 1;
+  box-sizing: border-box;
+  border-width: 2px 2px 2px 2px;
+}
