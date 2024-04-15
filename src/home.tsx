@@ -199,10 +199,10 @@ function Home() {
               </FormControl>
             </Grid> */}
             <div>
-              <h3>
+              {/* <h3>
                 Optionally use the document selector above to combine new data
                 with Starling AI for instant analysis
-              </h3>
+              </h3> */}
             </div>
             {/* <Grid
               sx={{
