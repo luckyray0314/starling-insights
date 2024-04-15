@@ -1,17 +1,17 @@
 // import { useState } from "react";
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import {
-  Button,
-  FormControl,
-  FormHelperText,
-  Grid,
-  Typography,
-} from "@mui/material";
-import { SelectChangeEvent } from "@mui/material/Select";
+// import Select from "@mui/material/Select";
+// import MenuItem from "@mui/material/MenuItem";
+// import {
+//   Button,
+//   FormControl,
+//   FormHelperText,
+//   Grid,
+//   Typography,
+// } from "@mui/material";
+// import { SelectChangeEvent } from "@mui/material/Select";
 
 import mainLogo from "./assets/logo.png";
 import mainGif from "./assets/Iframe → image.gif";
@@ -26,11 +26,11 @@ import "./home.css";
 
 function Home() {
   // const [count, setCount] = useState(0);
-  const [age, setAge] = React.useState("");
+  // const [age, setAge] = React.useState("");
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setAge(event.target.value as string);
+  // };
 
   return (
     <>
@@ -224,9 +224,11 @@ function Home() {
               </Typography>
             </Grid> */}
             <div>
-              <button className="gradient-button button-active">
-                <span>Start Your Conversation</span>
-              </button>
+              <Link to="/chat">
+                <button className="gradient-button button-active">
+                  <span>Start Your Conversation</span>
+                </button>
+              </Link>
             </div>
             {/* <Grid>
               <Typography sx={{ fontFamily: "ForzaMedium" }}>
@@ -301,10 +303,10 @@ function Home() {
       <div className="footer">
         <div>
           <h3>Interested?</h3>
-          <p>
+          <h4>
             Get in touch to discuss enterprise use cases or provide feedback
-          </p>
-          <FormControl size="small" sx={{ paddingY: "15px" }}>
+          </h4>
+          {/* <FormControl size="small" sx={{ paddingY: "15px" }}>
             <Button
               sx={{
                 borderRadius: "18px",
@@ -316,7 +318,10 @@ function Home() {
             >
               Get in touch
             </Button>
-          </FormControl>
+          </FormControl> */}
+          <button className="gradient-button button-active">
+            <span>Get in touch</span>
+          </button>
         </div>
       </div>
     </>

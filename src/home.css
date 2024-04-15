@@ -229,6 +229,11 @@
   color: #14abb2;
 }
 
+.footer > div > h4 {
+  font-size: 1.1rem;
+  padding: 10px 0px;
+}
+
 .gradient-button {
   background-image: linear-gradient(to left, #006175 0%, #14abb2 100%);
   border-radius: 40px;
