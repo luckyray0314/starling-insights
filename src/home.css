@@ -55,6 +55,22 @@
 
 .main-top-bottom h3 {
   font-size: 1.5rem;
+  padding: 40px 0px;
+}
+
+.main-top-bottom :nth-child(2) {
+  margin: 40px 0px;
+  padding: 20px 40px;
+  height: 250px;
+  background-color: white;
+  color: #14abb2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-top-bottom :nth-child(3) {
+  padding: 40px 0px;
 }
 
 .main-top-bottom-select {
@@ -70,7 +86,7 @@
   position: relative;
 }
 
-.main-second div {
+.main-second > div {
   height: 750px;
   width: 50%;
   display: block;
@@ -97,6 +113,20 @@
 .main-second div > p {
   padding: 0px 15px 30px 100px;
   font-size: 1.2rem;
+}
+
+.main-second div > div > h4:first-child {
+  width: 100%;
+  font-size: 22px;
+  padding: 0px 15px 0px 100px;
+}
+
+.main-second div > div > h5 {
+  width: 100%;
+  font-family: "ForzaLight";
+  color: #455864;
+  font-size: 17px;
+  padding: 0px 15px 30px 100px;
 }
 
 .main-second div > img {
@@ -197,4 +227,40 @@
   font-size: 1.8rem;
 
   color: #14abb2;
+}
+
+.gradient-button {
+  background-image: linear-gradient(to left, #006175 0%, #14abb2 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: black;
+  /* display: block; */
+  padding: 2px 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.gradient-button:hover {
+  color: #fff;
+}
+
+.gradient-button span {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.gradient-button:hover span {
+  background: transparent;
+}
+
+.button-active span {
+  background: transparent;
+  color: white;
 }

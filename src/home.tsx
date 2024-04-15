@@ -51,11 +51,8 @@ function Home() {
             </p>
           </div>
           <div className="main-top-bottom">
-            <h3>
-              Start your conversation by selecting the documents you want to
-              explore
-            </h3>
-            <Grid
+            <h3>Start your conversation below:</h3>
+            {/* <Grid
               container
               item
               xs={4}
@@ -200,8 +197,14 @@ function Home() {
                   add to list
                 </FormHelperText>
               </FormControl>
-            </Grid>
-            <Grid
+            </Grid> */}
+            <div>
+              <h3>
+                Optionally use the document selector above to combine new data
+                with Starling AI for instant analysis
+              </h3>
+            </div>
+            {/* <Grid
               sx={{
                 margin: "20px 40px",
                 height: "250px",
@@ -219,8 +222,13 @@ function Home() {
                 Optionally use the document selector above to combine new data
                 with Starling AI for instant analysis
               </Typography>
-            </Grid>
-            <Grid>
+            </Grid> */}
+            <div>
+              <button className="gradient-button button-active">
+                <span>Start Your Conversation</span>
+              </button>
+            </div>
+            {/* <Grid>
               <Typography sx={{ fontFamily: "ForzaMedium" }}>
                 Add up to 10 docs
               </Typography>
@@ -240,7 +248,7 @@ function Home() {
                   </Button>
                 </Link>
               </FormControl>
-            </Grid>
+            </Grid> */}
           </div>
         </div>
       </div>
@@ -248,15 +256,17 @@ function Home() {
         <div>
           <p>Starling Insights presents</p>
           <h3>The next step in analyzing complex financial documents</h3>
-          <p>
-            <b>
+          <div>
+            <h4>
               Take a peek under the hood and stream insights directly from the
-              algorithm Starling Insights does more than give you the answer.
-            </b>
+              algorithm
+            </h4>
             <br />
-            It helps you understand how that answer was generated in the first
-            place.
-          </p>
+            <h5 className="">
+              Starling Insights does more than give you the answer. It helps you
+              understand how that answer was generated in the first place.
+            </h5>
+          </div>
           <img src={thirdImg} alt="third image" />
         </div>
         <img src={secondImg} alt="second image" />

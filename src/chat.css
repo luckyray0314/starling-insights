@@ -32,7 +32,7 @@
 }
 
 .gradient-button {
-  background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
+  background-image: linear-gradient(to left, #006175 0%, #14abb2 100%);
   border-radius: 40px;
   box-sizing: border-box;
   color: black;

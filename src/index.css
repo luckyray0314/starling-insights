@@ -9,8 +9,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ForzaLight";
+  src: url("./fonts/Forza-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: "ForzaMedium", Inter, system-ui, Avenir, Helvetica, Arial,
+  font-family: "ForzaMedium","ForzaLight", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
