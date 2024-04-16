@@ -43,6 +43,9 @@ function Home() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [memoryID, setMemoryID] = useState(
+    Math.floor(new Date().getTime() / 1000)
+  );
 
   const newTextRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -62,6 +65,12 @@ function Home() {
       scrollDomToBottom();
     }
   });
+
+  useEffect(() => {
+    setMemoryID(Math.floor(new Date().getTime() / 1000));
+  }, []);
+
+  // console.log("memoryID---------", memoryID);
 
   const handleEnter = (e: React.KeyboardEvent<HTMLDivElement> | undefined) => {
     if (e?.key !== "Enter") {
@@ -103,7 +112,7 @@ function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        memory_id: Math.floor(new Date().getTime() / 1000),
+        memory_id: memoryID,
         user_input: prompt,
       }),
     })
