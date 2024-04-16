@@ -1,7 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import Home from "./home";
 import Chat from "./chat";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const mainRoutes = [

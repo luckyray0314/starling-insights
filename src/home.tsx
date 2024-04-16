@@ -52,177 +52,79 @@ function Home() {
           </div>
           <div className="main-top-bottom">
             <h3>Start your conversation below:</h3>
-            {/* <Grid
-              container
-              item
-              xs={4}
-              sm={8}
-              md={12}
-              sx={{
-                padding: 2,
-                display: "flex",
-                justifyContent: "center",
-                width: "70%",
-                margin: "0px auto",
-              }}
-            >
-              <Grid item xs={2} sm={4} md={4}>
-                <FormControl fullWidth size="small">
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    displayEmpty
-                    onChange={handleChange}
-                    sx={{
-                      marginX: "auto",
-                      borderRadius: "18px",
-                      width: "250px",
-
-                      borderImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "black",
-                      "&:hover": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                      "&.Mui-focused": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                    }}
-                  >
-                    <MenuItem value={""}>Search by topic</MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={2} sm={4} md={4}>
-                <FormControl fullWidth size="small">
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    displayEmpty
-                    onChange={handleChange}
-                    sx={{
-                      marginX: "auto",
-                      borderRadius: "18px",
-                      width: "250px",
-
-                      borderImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "black",
-                      "&:hover": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                      "&.Mui-focused": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                    }}
-                  >
-                    <MenuItem value={""}>Search by expert</MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={2} sm={4} md={4}>
-                <FormControl fullWidth size="small">
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    displayEmpty
-                    onChange={handleChange}
-                    sx={{
-                      marginX: "auto",
-                      borderRadius: "18px",
-                      width: "250px",
-
-                      borderImage:
-                        "linear-gradient(to right, #14ABB2, #2E598C)",
-                      color: "black",
-                      "&:hover": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                      "&.Mui-focused": {
-                        backgroundImage:
-                          "linear-gradient(to right, #14ABB2, #2E598C)",
-
-                        color: "white",
-                      },
-                    }}
-                  >
-                    <MenuItem value={""}>Search by date range</MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-            </Grid>
-            <Grid>
-              <FormControl size="small">
-                <Button
-                  sx={{
-                    borderRadius: "18px",
-                    width: "120px",
-                    fontWeight: "unset",
-                    color: "white",
-                    backgroundImage:
-                      "linear-gradient(to right, #14ABB2, #2E598C)",
-                  }}
-                >
-                  Add
-                </Button>
-                <FormHelperText sx={{ textAlign: "center" }}>
-                  Shift + Enter to <br />
-                  add to list
-                </FormHelperText>
-              </FormControl>
-            </Grid> */}
-            <div>
-              {/* <h3>
-                Optionally use the document selector above to combine new data
-                with Starling AI for instant analysis
-              </h3> */}
+            <div className="main-chat">
+              <div className="user-chat chat-line">
+                <div className="chat-msg">What is finance?</div>
+              </div>
+              <div className="bot-chat chat-line">
+                <div className="chat-msg">
+                  Finance is the dfsklfjsl;kdfjlskjf;ls
+                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
+                  sjdlfka
+                </div>
+              </div>
+              <div className="user-chat chat-line">
+                <div className="chat-msg">What is finance?</div>
+              </div>
+              <div className="bot-chat chat-line">
+                <div className="chat-msg">
+                  Finance is the dfsklfjsl;kdfjlskjf;ls
+                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
+                  sjdlfka
+                </div>
+              </div>
+              <div className="user-chat chat-line">
+                <div className="chat-msg">What is finance?</div>
+              </div>
+              <div className="bot-chat chat-line">
+                <div className="chat-msg">
+                  Finance is the dfsklfjsl;kdfjlskjf;ls
+                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
+                  sjdlfka
+                </div>
+              </div>
             </div>
-            {/* <Grid
-              sx={{
-                margin: "20px 40px",
-                height: "250px",
-                backgroundColor: "white",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                color: "#14ABB2",
-              }}
-            >
-              <Typography
-                variant="h3"
-                sx={{ width: "70%", fontFamily: "ForzaMedium" }}
-              >
-                Optionally use the document selector above to combine new data
-                with Starling AI for instant analysis
-              </Typography>
-            </Grid> */}
+            <div className="main-chat-bottom">
+              <div>
+                <input className="prompt-input"></input>
+              </div>
+              <button className="send-button">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_54_16)">
+                    <path
+                      d="M15.9593 0.476362C7.32827 0.476362 0.331421 7.47322 0.331421 16.1043C0.331421 24.7353 7.32827 31.7322 15.9593 31.7322C24.5904 31.7322 31.5872 24.7353 31.5872 16.1043C31.5872 7.47322 24.5904 0.476363 15.9593 0.476362Z"
+                      fill="url(#paint0_linear_54_16)"
+                    />
+                    <path
+                      d="M17.4571 23.9576C17.3098 23.9576 17.089 23.884 16.9418 23.8104C16.5738 23.5895 16.4266 23.2951 16.2057 22.7063L14.2919 17.7743L9.35993 15.8605C8.77106 15.6396 8.47659 15.4924 8.25579 15.1243C8.10859 14.8299 8.10859 14.3883 8.25579 14.0938C8.47659 13.7257 8.77106 13.5785 9.35993 13.3577L21.8001 8.49938C22.3154 8.27858 22.6099 8.20498 23.0515 8.27858C23.3459 8.49938 23.6404 8.79385 23.714 9.08825C23.8612 9.45633 23.714 9.8244 23.4931 10.3397L18.7085 22.7799C18.4877 23.3687 18.3404 23.6632 17.9724 23.884C17.8251 23.9576 17.6043 23.9576 17.4571 23.9576ZM15.764 17.4063L17.4571 21.8229L21.3584 11.7383L15.764 17.4063ZM10.3169 14.6827L14.7335 16.3758L20.4015 10.7077L10.3169 14.6827Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_54_16"
+                      x1="0.331421"
+                      y1="16.1043"
+                      x2="31.5872"
+                      y2="16.1043"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.12" stop-color="#14ABB2" />
+                      <stop offset="0.905" stop-color="#2E598C" />
+                    </linearGradient>
+                    <clipPath id="clip0_54_16">
+                      <rect width="32" height="32" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
             <div>
               <Link to="/chat">
                 <button className="gradient-button button-active">
