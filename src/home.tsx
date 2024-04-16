@@ -197,7 +197,7 @@ function Home() {
             </p>
           </div>
           <div className="main-top-bottom">
-            <h3>Start your conversation below:</h3>
+            <h3>Start your conversation now:</h3>
             <div className="main-chat" ref={newTextRef}>
               {messages?.map((message) => (
                 <>
