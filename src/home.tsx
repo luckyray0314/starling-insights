@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 // import React from "react";
 import { Link } from "react-router-dom";
-
+import ReactMarkdown from "react-markdown";
 // import Select from "@mui/material/Select";
 // import MenuItem from "@mui/material/MenuItem";
 // import {
@@ -39,7 +39,9 @@ function Home() {
   // };
 
   const [prompt, setPrompt] = useState<string>("");
-  const [messages, setMessages] = useState<Message[] | null>(null);
+  const [messages, setMessages] = useState<Message[] | null>([
+    { id: 0, text: "Hello! How can I assis you today?", sender: "bot" },
+  ]);
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -105,13 +107,13 @@ function Home() {
     }
 
     // console.log("-----prompt-------", prompt);
-    let num = 0;
+    let num = 1;
     if (messages != null) {
       num = messages?.length;
       setMessages([...messages, { id: num, text: user_input, sender: "user" }]);
     } else {
-      num = 0;
-      setMessages([{ id: 0, text: user_input, sender: "user" }]);
+      num = 1;
+      setMessages([{ id: 1, text: user_input, sender: "user" }]);
     }
 
     await fetch("https://starling-api.fly.dev/chat", {
@@ -125,11 +127,11 @@ function Home() {
       }),
     })
       .then((response) => {
-        // console.log("response--------", response);
+        // console.log("response--------", response.json());
         return response.json();
       })
       .then((data) => {
-        // console.log("Result", data);
+        console.log("Result", data);
 
         setResponse(data?.response);
         // setOpen(true);
@@ -144,7 +146,7 @@ function Home() {
 
   useEffect(() => {
     setPrompt("");
-    if (messages != null)
+    if (messages != null && messages?.length > 1)
       setMessages([
         ...messages,
         { id: messages.length, text: response, sender: "bot" },
@@ -167,16 +169,23 @@ function Home() {
       <>
         {message?.sender == "user" ? (
           <div className="user-chat chat-line">
-            <div className="chat-msg">{message?.text}</div>
+            <div className="chat-msg" style={{ whiteSpace: "pre-line" }}>
+              {/* <ReactMarkdown>{message.text}</ReactMarkdown> */}
+              {message.text}
+            </div>
           </div>
         ) : (
           <div className="bot-chat chat-line">
-            <div className="chat-msg">{message?.text}</div>
+            <div className="chat-msg" style={{ whiteSpace: "pre-line" }}>
+              {/* <ReactMarkdown>{message.text}</ReactMarkdown> */}
+              {message.text}
+            </div>
           </div>
         )}
       </>
     );
   };
+  // console.log("mes---", response);
 
   return (
     <>
@@ -188,8 +197,8 @@ function Home() {
         <div className="main-top-over">
           <div className="main-top-text">
             <h2>
-              Empowering outcomes for governance, behavioral, and other
-              nonfinancial risks
+              Empowering successful governance and supervision of cultural,
+              behavioral, and other non-financial risks
             </h2>
             <p>
               Effortlessly access actionable information from leaders and
@@ -290,7 +299,7 @@ function Home() {
       <div className="main-second">
         <div>
           <p>Starling Insights presents</p>
-          <h3>The next step in analyzing complex financial documents</h3>
+          <h3>The next step in analyzing complex documents</h3>
           <div>
             <h4>
               Take a peek under the hood and stream insights directly from the
