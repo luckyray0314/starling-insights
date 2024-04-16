@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 // import React from "react";
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,12 @@ import "./home.css";
 
 // import "./App.css";
 
+interface Message {
+  id: number;
+  text: string;
+  sender: string;
+}
+
 function Home() {
   // const [count, setCount] = useState(0);
   // const [age, setAge] = React.useState("");
@@ -31,6 +37,129 @@ function Home() {
   // const handleChange = (event: SelectChangeEvent) => {
   //   setAge(event.target.value as string);
   // };
+
+  const [prompt, setPrompt] = useState<string>("");
+  const [messages, setMessages] = useState<Message[] | null>(null);
+  const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const newTextRef = useRef<HTMLDivElement>(null);
+  const [autoScroll, setAutoScroll] = useState(true);
+
+  function scrollDomToBottom() {
+    const dom = newTextRef.current;
+    if (dom) {
+      requestAnimationFrame(() => {
+        setAutoScroll(true);
+        dom.scrollTo(0, dom.scrollHeight);
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (autoScroll) {
+      scrollDomToBottom();
+    }
+  });
+
+  const handleEnter = (e: React.KeyboardEvent<HTMLDivElement> | undefined) => {
+    if (e?.key !== "Enter") {
+      return;
+    }
+    if (e.key === "Enter" && (e.ctrlKey || e.shiftKey)) {
+      setPrompt(prompt + "\n");
+      // return;
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (!loading) sendPrompt();
+    }
+  };
+
+  const sendPrompt = async () => {
+    setLoading(true);
+    // setErrorMessage("");
+
+    if (prompt.trim() == "") {
+      // console.log("prompt is empty");
+      // setErrorMessage("Prompt cannot be empty!");
+      // setLoading(false);
+      return;
+    }
+
+    // console.log("-----prompt-------", prompt);
+    let num = 0;
+    if (messages != null) {
+      num = messages?.length;
+      setMessages([...messages, { id: num, text: prompt, sender: "user" }]);
+    } else {
+      num = 0;
+      setMessages([{ id: 0, text: prompt, sender: "user" }]);
+    }
+
+    await fetch("https://starling-api.fly.dev/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        memory_id: Math.floor(new Date().getTime() / 1000),
+        user_input: prompt,
+      }),
+    })
+      .then((response) => {
+        // console.log("response--------", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Result", data);
+
+        setResponse(data?.response);
+        // setOpen(true);
+      })
+      .catch(() => {
+        // console.error(error);
+        setErrorMessage("Network Error! Please try again.");
+      });
+    scrollDomToBottom();
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    setPrompt("");
+    if (messages != null)
+      setMessages([
+        ...messages,
+        { id: messages.length, text: response, sender: "bot" },
+      ]);
+  }, [response]);
+
+  useEffect(() => {
+    setPrompt("");
+    if (messages != null && errorMessage != "") {
+      setMessages([
+        ...messages,
+        { id: messages.length, text: errorMessage, sender: "bot" },
+      ]);
+      setErrorMessage("");
+    }
+  }, [errorMessage]);
+
+  const Message = ({ message }: { message: Message }) => {
+    return (
+      <>
+        {message?.sender == "user" ? (
+          <div className="user-chat chat-line">
+            <div className="chat-msg">{message?.text}</div>
+          </div>
+        ) : (
+          <div className="bot-chat chat-line">
+            <div className="chat-msg">{message?.text}</div>
+          </div>
+        )}
+      </>
+    );
+  };
 
   return (
     <>
@@ -52,46 +181,28 @@ function Home() {
           </div>
           <div className="main-top-bottom">
             <h3>Start your conversation below:</h3>
-            <div className="main-chat">
-              <div className="user-chat chat-line">
-                <div className="chat-msg">What is finance?</div>
-              </div>
-              <div className="bot-chat chat-line">
-                <div className="chat-msg">
-                  Finance is the dfsklfjsl;kdfjlskjf;ls
-                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
-                  sjdlfka
-                </div>
-              </div>
-              <div className="user-chat chat-line">
-                <div className="chat-msg">What is finance?</div>
-              </div>
-              <div className="bot-chat chat-line">
-                <div className="chat-msg">
-                  Finance is the dfsklfjsl;kdfjlskjf;ls
-                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
-                  sjdlfka
-                </div>
-              </div>
-              <div className="user-chat chat-line">
-                <div className="chat-msg">What is finance?</div>
-              </div>
-              <div className="bot-chat chat-line">
-                <div className="chat-msg">
-                  Finance is the dfsklfjsl;kdfjlskjf;ls
-                  jflksjldkfjslkfja;lsdajlkf alkjfjakl;fjlksadj f;lksajdf;lka
-                  sjdlfka
-                </div>
-              </div>
+            <div className="main-chat" ref={newTextRef}>
+              {messages?.map((message) => (
+                <>
+                  <Message key={message.id} message={message} />
+                </>
+              ))}
             </div>
             <div className="main-chat-bottom">
               <div>
                 <input
                   className="prompt-input"
                   placeholder="Type a message ... "
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                  onKeyDown={handleEnter}
                 ></input>
               </div>
-              <button className="send-button">
+              <button
+                className="send-button"
+                onClick={sendPrompt}
+                disabled={loading}
+              >
                 <svg
                   width="32"
                   height="32"
@@ -99,7 +210,7 @@ function Home() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_54_16)">
+                  <g clipPath="url(#clip0_54_16)">
                     <path
                       d="M15.9593 0.476362C7.32827 0.476362 0.331421 7.47322 0.331421 16.1043C0.331421 24.7353 7.32827 31.7322 15.9593 31.7322C24.5904 31.7322 31.5872 24.7353 31.5872 16.1043C31.5872 7.47322 24.5904 0.476363 15.9593 0.476362Z"
                       fill="url(#paint0_linear_54_16)"
@@ -118,8 +229,8 @@ function Home() {
                       y2="16.1043"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop offset="0.12" stop-color="#14ABB2" />
-                      <stop offset="0.905" stop-color="#2E598C" />
+                      <stop offset="0.12" stopColor="#14ABB2" />
+                      <stop offset="0.905" stopColor="#2E598C" />
                     </linearGradient>
                     <clipPath id="clip0_54_16">
                       <rect width="32" height="32" fill="white" />
@@ -129,7 +240,7 @@ function Home() {
               </button>
             </div>
             <div>
-              <Link to="/chat">
+              <Link to="https://insights.starlingtrust.com/contact">
                 <button className="gradient-button button-active">
                   <span>Start Your Conversation</span>
                 </button>
@@ -224,9 +335,11 @@ function Home() {
               Get in touch
             </Button>
           </FormControl> */}
-          <button className="gradient-button button-active">
-            <span>Get in touch</span>
-          </button>
+          <Link to="https://insights.starlingtrust.com/contact">
+            <button className="gradient-button button-active">
+              <span>Get in touch</span>
+            </button>
+          </Link>
         </div>
       </div>
     </>
