@@ -86,7 +86,10 @@ function Home() {
             </div>
             <div className="main-chat-bottom">
               <div>
-                <input className="prompt-input"></input>
+                <input
+                  className="prompt-input"
+                  placeholder="Type a message ... "
+                ></input>
               </div>
               <button className="send-button">
                 <svg
