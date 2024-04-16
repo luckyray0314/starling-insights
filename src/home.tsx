@@ -81,15 +81,17 @@ function Home() {
       // return;
     } else if (e.key === "Enter") {
       e.preventDefault();
-      if (!loading) sendPrompt();
+      let user_input = prompt;
+      setPrompt("");
+      if (!loading) sendPrompt(user_input);
     }
   };
 
-  const sendPrompt = async () => {
+  const sendPrompt = async (user_input: string) => {
     setLoading(true);
     // setErrorMessage("");
 
-    if (prompt.trim() == "") {
+    if (user_input.trim() == "") {
       // console.log("prompt is empty");
       // setErrorMessage("Prompt cannot be empty!");
       // setLoading(false);
@@ -100,10 +102,10 @@ function Home() {
     let num = 0;
     if (messages != null) {
       num = messages?.length;
-      setMessages([...messages, { id: num, text: prompt, sender: "user" }]);
+      setMessages([...messages, { id: num, text: user_input, sender: "user" }]);
     } else {
       num = 0;
-      setMessages([{ id: 0, text: prompt, sender: "user" }]);
+      setMessages([{ id: 0, text: user_input, sender: "user" }]);
     }
 
     await fetch("https://starling-api.fly.dev/chat", {
@@ -113,7 +115,7 @@ function Home() {
       },
       body: JSON.stringify({
         memory_id: memoryID,
-        user_input: prompt,
+        user_input: user_input,
       }),
     })
       .then((response) => {
@@ -121,7 +123,7 @@ function Home() {
         return response.json();
       })
       .then((data) => {
-        console.log("Result", data);
+        // console.log("Result", data);
 
         setResponse(data?.response);
         // setOpen(true);
