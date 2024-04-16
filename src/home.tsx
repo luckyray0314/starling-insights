@@ -87,6 +87,12 @@ function Home() {
     }
   };
 
+  const sendUserInput = async () => {
+    let user_input = prompt;
+    setPrompt("");
+    if (!loading) sendPrompt(user_input);
+  };
+
   const sendPrompt = async (user_input: string) => {
     setLoading(true);
     // setErrorMessage("");
@@ -211,7 +217,7 @@ function Home() {
               </div>
               <button
                 className="send-button"
-                onClick={sendPrompt}
+                onClick={sendUserInput}
                 disabled={loading}
               >
                 <svg
