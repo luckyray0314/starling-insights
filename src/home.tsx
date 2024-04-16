@@ -40,7 +40,7 @@ function Home() {
 
   const [prompt, setPrompt] = useState<string>("");
   const [messages, setMessages] = useState<Message[] | null>([
-    { id: 0, text: "Hello! How can I assis you today?", sender: "bot" },
+    { id: 0, text: "Hello! How can I assist you today?", sender: "bot" },
   ]);
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
@@ -132,8 +132,10 @@ function Home() {
       })
       .then((data) => {
         console.log("Result", data);
-
-        setResponse(data?.response);
+        let links = data?.source_nodes;
+        setResponse(
+          data?.response + "\n\nReferences:\n\n" + links.join("\n\n")
+        );
         // setOpen(true);
       })
       .catch(() => {
