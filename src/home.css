@@ -155,7 +155,7 @@
   margin: auto 10px;
 }
 
-.main-top-bottom :nth-child(4) {
+.main-top-bottom >div:last-child {
   padding: 40px 0px;
 }
 

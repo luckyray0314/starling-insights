@@ -51,22 +51,38 @@ function Home() {
 
   const newTextRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
+  // const [currentHeight, setCurrentHeight] = useState(0);
+  const currentHeight = useRef(100);
 
-  function scrollDomToBottom() {
+  function scrollDomToBottom(messageType: string) {
     const dom = newTextRef.current;
     if (dom) {
+      // console.log("dom: ", dom.scrollHeight, currentHeight, messageType);
       requestAnimationFrame(() => {
         setAutoScroll(true);
-        dom.scrollTo(0, dom.scrollHeight);
+        if (messageType == "user") {
+          // setCurrentHeight(dom.scrollHeight);
+          currentHeight.current = dom.scrollHeight;
+          dom.scrollTo(0, dom.scrollHeight);
+        } else {
+          // console.log(currentHeight.current);
+          if (currentHeight.current != 350)
+            dom.scrollTo(0, currentHeight.current - 100);
+        }
       });
     }
   }
 
   useEffect(() => {
-    if (autoScroll) {
-      scrollDomToBottom();
+    if (messages) {
+      let len = messages?.length - 1;
+      // console.log("sender------", messages[len].sender);
+      if (autoScroll) {
+        if (messages[len].sender == "user") scrollDomToBottom("user");
+        else scrollDomToBottom("bot");
+      }
     }
-  });
+  }, [messages]);
 
   useEffect(() => {
     setMemoryID(Math.floor(new Date().getTime() / 1000));
@@ -131,7 +147,7 @@ function Home() {
         return response.json();
       })
       .then((data) => {
-        console.log("Result", data);
+        // console.log("Result", data);
         let links = data?.source_nodes;
         setResponse(
           data?.response + "\n\nReferences:\n\n" + links.join("\n\n")
@@ -142,7 +158,7 @@ function Home() {
         // console.error(error);
         setErrorMessage("Network Error! Please try again.");
       });
-    scrollDomToBottom();
+    // scrollDomToBottom();
     setLoading(false);
   };
 
@@ -210,10 +226,9 @@ function Home() {
           <div className="main-top-bottom">
             <h3>Start your conversation now:</h3>
             <div className="main-chat" ref={newTextRef}>
+              {/* <div className="main-chat"> */}
               {messages?.map((message) => (
-                <>
-                  <Message key={message.id} message={message} />
-                </>
+                <Message key={message.id} message={message} />
               ))}
             </div>
             <div className="main-chat-bottom">
