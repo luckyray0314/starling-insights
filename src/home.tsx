@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 // import React from "react";
 import { Link } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+// import SendIcon from "@mui/icons-material/Send";
 // import ReactMarkdown from "react-markdown";
 // import Select from "@mui/material/Select";
 // import MenuItem from "@mui/material/MenuItem";
@@ -241,46 +243,52 @@ function Home() {
                   onKeyDown={handleEnter}
                 ></input>
               </div>
-              <button
-                className="send-button"
-                onClick={sendUserInput}
-                disabled={loading}
-              >
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div>
+                <button
+                  className="send-button"
+                  onClick={sendUserInput}
+                  disabled={loading}
                 >
-                  <g clipPath="url(#clip0_54_16)">
-                    <path
-                      d="M15.9593 0.476362C7.32827 0.476362 0.331421 7.47322 0.331421 16.1043C0.331421 24.7353 7.32827 31.7322 15.9593 31.7322C24.5904 31.7322 31.5872 24.7353 31.5872 16.1043C31.5872 7.47322 24.5904 0.476363 15.9593 0.476362Z"
-                      fill="url(#paint0_linear_54_16)"
-                    />
-                    <path
-                      d="M17.4571 23.9576C17.3098 23.9576 17.089 23.884 16.9418 23.8104C16.5738 23.5895 16.4266 23.2951 16.2057 22.7063L14.2919 17.7743L9.35993 15.8605C8.77106 15.6396 8.47659 15.4924 8.25579 15.1243C8.10859 14.8299 8.10859 14.3883 8.25579 14.0938C8.47659 13.7257 8.77106 13.5785 9.35993 13.3577L21.8001 8.49938C22.3154 8.27858 22.6099 8.20498 23.0515 8.27858C23.3459 8.49938 23.6404 8.79385 23.714 9.08825C23.8612 9.45633 23.714 9.8244 23.4931 10.3397L18.7085 22.7799C18.4877 23.3687 18.3404 23.6632 17.9724 23.884C17.8251 23.9576 17.6043 23.9576 17.4571 23.9576ZM15.764 17.4063L17.4571 21.8229L21.3584 11.7383L15.764 17.4063ZM10.3169 14.6827L14.7335 16.3758L20.4015 10.7077L10.3169 14.6827Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_54_16"
-                      x1="0.331421"
-                      y1="16.1043"
-                      x2="31.5872"
-                      y2="16.1043"
-                      gradientUnits="userSpaceOnUse"
+                  {loading ? (
+                    <CircularProgress size={15} style={{ color: "white" }} />
+                  ) : (
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <stop offset="0.12" stopColor="#14ABB2" />
-                      <stop offset="0.905" stopColor="#2E598C" />
-                    </linearGradient>
-                    <clipPath id="clip0_54_16">
-                      <rect width="32" height="32" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
+                      <g clipPath="url(#clip0_54_16)">
+                        <path
+                          d="M15.9593 0.476362C7.32827 0.476362 0.331421 7.47322 0.331421 16.1043C0.331421 24.7353 7.32827 31.7322 15.9593 31.7322C24.5904 31.7322 31.5872 24.7353 31.5872 16.1043C31.5872 7.47322 24.5904 0.476363 15.9593 0.476362Z"
+                          fill="url(#paint0_linear_54_16)"
+                        />
+                        <path
+                          d="M17.4571 23.9576C17.3098 23.9576 17.089 23.884 16.9418 23.8104C16.5738 23.5895 16.4266 23.2951 16.2057 22.7063L14.2919 17.7743L9.35993 15.8605C8.77106 15.6396 8.47659 15.4924 8.25579 15.1243C8.10859 14.8299 8.10859 14.3883 8.25579 14.0938C8.47659 13.7257 8.77106 13.5785 9.35993 13.3577L21.8001 8.49938C22.3154 8.27858 22.6099 8.20498 23.0515 8.27858C23.3459 8.49938 23.6404 8.79385 23.714 9.08825C23.8612 9.45633 23.714 9.8244 23.4931 10.3397L18.7085 22.7799C18.4877 23.3687 18.3404 23.6632 17.9724 23.884C17.8251 23.9576 17.6043 23.9576 17.4571 23.9576ZM15.764 17.4063L17.4571 21.8229L21.3584 11.7383L15.764 17.4063ZM10.3169 14.6827L14.7335 16.3758L20.4015 10.7077L10.3169 14.6827Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_54_16"
+                          x1="0.331421"
+                          y1="16.1043"
+                          x2="31.5872"
+                          y2="16.1043"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop offset="0.12" stopColor="#14ABB2" />
+                          <stop offset="0.905" stopColor="#2E598C" />
+                        </linearGradient>
+                        <clipPath id="clip0_54_16">
+                          <rect width="32" height="32" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
             <div>
               <Link to="https://insights.starlingtrust.com/contact">

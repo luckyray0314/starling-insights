@@ -151,11 +151,22 @@
   outline: #14abb2;
 }
 
-.send-button {
-  margin: auto 10px;
+.main-chat-bottom > div:last-child {
+  display: flex;
 }
 
-.main-top-bottom >div:last-child {
+.send-button {
+  margin: auto 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #14abb2, #2e598c);
+  width: 31.26px;
+  height: 31.26px;
+  border-radius: 50%;
+}
+
+.main-top-bottom > div:last-child {
   padding: 40px 0px;
 }
 
