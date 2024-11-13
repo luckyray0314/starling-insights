@@ -1,4 +1,4 @@
-# Starling Insights
+# Starling Insights Chatbot
 
 This project is based on React + Typescript + Vite template.
 
